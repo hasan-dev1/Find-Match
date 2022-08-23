@@ -130,7 +130,7 @@ document.getElementById("btnCalculate").addEventListener("click", function () {
   const playerQuantity = selectedView.children.length;
   const clearInput = document.getElementById("budgetAmount");
 
-  if (isNaN(budgetAmount) != true) {
+  if (isNaN(budgetAmount) != true && budgetAmount >0 ) {
     if (playerQuantity != 0) {
       const totalPlayerCost = budgetAmount * playerQuantity;
       storeAmount = totalPlayerCost;
@@ -142,7 +142,7 @@ document.getElementById("btnCalculate").addEventListener("click", function () {
     }
   } else {
     clearInput.value = "";
-    alert("Please Input a Number");
+    alert("Please Input a Number grater than 0");
   }
 });
 
@@ -157,7 +157,7 @@ document
 
 
     if (storeAmount != "undefine" && isNaN(storeAmount) != true ) {
-      if (isNaN(Manager) != true && isNaN(coach) != true ) {
+      if (isNaN(Manager) != true && isNaN(coach) != true && Manager >0 && coach >0) {
         const totalAmount = Manager + coach;
         const grandTotal = totalAmount + storeAmount;
         setElementValue("totalValue", grandTotal);
@@ -166,7 +166,7 @@ document
       } else {
         clearManagerInput.value = "";
         clearcoachInput.value = "";
-        alert("Enter a number");
+        alert("Enter a number Graeter than 0");
       }
     } else {
        alert("Check upper requirements");
